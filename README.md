@@ -1,4 +1,7 @@
 # localhunt
+
+***************VIEW THIS FILE IN CODE FORMAT FOR CLEAR UNDERSTANDING***************
+
 create a web project at firebase, build authentication, firestore database (in test mode, not in production).
 get the credentials and service-account file that are to be setup in .env file
 create an account in mapbox and get an api token,
