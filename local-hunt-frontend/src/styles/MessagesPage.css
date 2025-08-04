@@ -1,0 +1,106 @@
+/* src/styles/MessagesPage.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+.messages-page-container {
+    min-height: calc(100vh - 100px); /* Adjust for header/footer */
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation-list-card, .chat-window-card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    height: calc(100vh - 180px); /* Adjust height to fill viewport */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensure content doesn't overflow rounded corners */
+}
+
+.conversation-list-card .list-group-item {
+    border-left: 4px solid transparent;
+    transition: background-color 0.2s ease, border-left-color 0.2s ease;
+}
+.conversation-list-card .list-group-item:hover {
+    background-color: #f8f9fa;
+}
+.conversation-list-card .list-group-item.active {
+    border-left-color: #007bff;
+    background-color: #e9ecef;
+}
+.conversation-list-card .list-group-item strong {
+    color: #007bff;
+}
+.conversation-list-card .list-group-item small {
+    font-size: 0.85rem;
+}
+
+/* Chat Window Specifics */
+.chat-messages-body {
+    flex-grow: 1; /* Allows message body to expand */
+    overflow-y: auto; /* Enable scrolling for messages */
+    padding: 1rem;
+    background-color: #f8f9fa; /* Light background for chat area */
+}
+
+.message-bubble {
+    padding: 0.75rem 1rem;
+    border-radius: 1.25rem; /* More rounded bubbles */
+    max-width: 75%; /* Allow bubbles to take more width */
+    word-wrap: break-word; /* Ensure long words wrap */
+    white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    line-height: 1.4;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.message-bubble.sender {
+    background-color: #007bff; /* Primary color for sender */
+    color: white;
+    border-bottom-right-radius: 0.25rem; /* Sharpen one corner */
+}
+
+.message-bubble.receiver {
+    background-color: #e9ecef; /* Light gray for receiver */
+    color: #212529;
+    border-bottom-left-radius: 0.25rem; /* Sharpen one corner */
+}
+
+.message-bubble small {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.chat-input-footer {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    background-color: #fff;
+}
+.chat-input-footer .form-control {
+    border-radius: 2rem; /* Rounded input */
+}
+.chat-input-footer .btn {
+    border-radius: 2rem; /* Rounded button */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) { /* md breakpoint */
+    .messages-page-container {
+        flex-direction: column; /* Stack columns on small screens */
+        height: auto;
+        min-height: calc(100vh - 56px); /* Adjust for mobile header */
+    }
+    .conversation-list-card, .chat-window-card {
+        height: auto; /* Auto height on mobile */
+        min-height: 300px; /* Minimum height for list/chat */
+        margin-bottom: 1rem; /* Spacing when stacked */
+    }
+    .message-bubble {
+        max-width: 90%; /* Wider bubbles on small screens */
+    }
+    .chat-messages-body {
+        height: 300px; /* Fixed height for chat area on mobile */
+    }
+}

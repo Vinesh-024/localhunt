@@ -1,0 +1,52 @@
+/* src/styles/VendorDetailPage.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+.vendor-detail-card {
+    border-radius: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.vendor-detail-profile-img {
+    border: 4px solid #007bff; /* Primary color border */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.vendor-detail-carousel .carousel-item img {
+    border-radius: 0.75rem;
+}
+
+.vendor-detail-map-container {
+    border: 1px solid #dee2e6;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.vendor-detail-list-group-item strong {
+    color: #495057; /* Darker text for labels */
+}
+
+.vendor-detail-list-group-item ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.vendor-detail-list-group-item ul li {
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) { /* md breakpoint */
+    .vendor-detail-profile-img {
+        max-width: 150px !important; /* Smaller on mobile */
+    }
+    .vendor-detail-carousel {
+        margin-top: 1.5rem !important;
+    }
+    .vendor-detail-map-container {
+        height: 300px !important; /* Adjust map height for mobile */
+    }
+    .vendor-detail-card .card-body {
+        padding: 1.5rem; /* Reduce padding on small screens */
+    }
+}

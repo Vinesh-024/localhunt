@@ -1,0 +1,115 @@
+/* src/styles/VendorDiscoveryPage.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+.vendor-search-card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.vendor-search-card .form-control,
+.vendor-search-card .form-select,
+.vendor-search-card .btn {
+    border-radius: 0.5rem; /* Slightly rounded for inputs/buttons */
+}
+
+.vendor-card-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.75rem; /* Rounded corners for cards */
+    overflow: hidden; /* Ensures image corners match card */
+}
+.vendor-card-item:hover {
+    transform: translateY(-8px) scale(1.02); /* Lift and slightly scale on hover */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15); /* More prominent shadow */
+}
+.vendor-card-item .card-img-top {
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+}
+.vendor-card-item .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.vendor-card-item .card-subtitle .badge {
+    font-size: 0.85rem;
+    padding: 0.4em 0.7em;
+    border-radius: 0.5rem;
+}
+
+/* Map view toggle buttons */
+.map-toggle-buttons .btn {
+    border-radius: 0.75rem;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.map-toggle-buttons .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.map-toggle-buttons .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+.map-toggle-buttons .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Mapbox marker custom styling */
+.mapboxgl-marker.marker {
+    background-color: transparent; /* Ensure background is transparent */
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+.mapboxgl-marker.marker:hover {
+    transform: scale(1.2); /* Slightly enlarge marker on hover */
+}
+.mapboxgl-popup .mapboxgl-popup-content {
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.mapboxgl-popup-tip { /* Style the popup arrow */
+    border-top-color: #007bff !important; /* Match primary color */
+}
+.mapboxgl-popup-content h6 {
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.mapboxgl-popup-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+.mapboxgl-popup-content .btn {
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) { /* md breakpoint and below */
+    .vendor-search-card .row > div {
+        margin-bottom: 1rem; /* Add space between stacked form elements */
+    }
+    .vendor-search-card .input-group .form-control,
+    .vendor-search-card .input-group .btn {
+        border-radius: 0.5rem !important; /* Ensure full rounding on small screens */
+    }
+    .vendor-search-card .input-group {
+        flex-wrap: wrap; /* Allow input group to wrap */
+    }
+    .vendor-search-card .input-group .btn {
+        width: 100%; /* Make search button full width */
+        margin-top: 0.5rem;
+    }
+    .vendor-search-card .input-group .form-control {
+        border-bottom-right-radius: 0.5rem !important; /* Fix rounding */
+        border-top-right-radius: 0.5rem !important;
+    }
+    .map-toggle-buttons .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
